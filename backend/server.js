@@ -22,7 +22,7 @@ app.use(
     cors({
         origin: [
             "http://localhost:5173",
-            "https://badminton-court-booking-system-ten.vercel.app/"
+            "https://badminton-court-booking-system-ten.vercel.app"
         ],
         credentials: true
     })
