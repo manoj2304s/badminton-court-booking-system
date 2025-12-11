@@ -18,17 +18,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(
-    cors({
-        origin: [
-            "http://localhost:5173",
-            "https://badminton-court-booking-system-ej1tg7g0o.vercel.app",
-            "https://badminton-court-booking-system-jkcrhftlk.vercel.app",
-            /\.vercel\.app$/
-        ],
-        credentials: true
-    })
-);
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'https://badminton-court-booking-system-ten.vercel.app',
+        'https://badminton-court-booking-system-f3hz1yqhc.vercel.app',
+    ],
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
