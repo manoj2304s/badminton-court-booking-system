@@ -23,6 +23,7 @@ app.use(cors({
         'http://localhost:3000',
         'https://badminton-court-booking-system-ten.vercel.app',
         'https://badminton-court-booking-system-f3hz1yqhc.vercel.app',
+        'https://badminton-court-booking-system-p15zrmz8a.vercel.app',
     ],
     credentials: true
 }));
