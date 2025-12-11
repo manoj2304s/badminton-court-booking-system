@@ -17,7 +17,8 @@ const sequelize = new Sequelize(process.env.DB_URL, {
     },
     define: {
         timestamps: true,
-        underscored: true
+        underscored: true,
+        freezeTableName: true
     }
 });
 
