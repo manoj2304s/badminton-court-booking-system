@@ -5,6 +5,7 @@ A modern, responsive React application for booking sports facilities with real-t
 ## 🎨 Features
 
 ### User Features
+
 - **Authentication**: Secure login/register with JWT tokens
 - **Real-Time Booking**: Live availability checking across multiple resources
 - **Dynamic Price Calculator**: See price breakdown as you select options
@@ -13,6 +14,7 @@ A modern, responsive React application for booking sports facilities with real-t
 - **Responsive Design**: Mobile-first, works on all devices
 
 ### Admin Features
+
 - **Resource Management**: CRUD operations for courts, equipment, coaches
 - **Pricing Rule Configuration**: Create and manage dynamic pricing rules
 - **Booking Overview**: View all bookings with filters
@@ -37,22 +39,26 @@ A modern, responsive React application for booking sports facilities with real-t
 ## 🚀 Installation
 
 1. **Navigate to frontend directory**
+
 ```bash
 cd frontend
 ```
 
-2. **Install dependencies**
+1. **Install dependencies**
+
 ```bash
 npm install
 ```
 
-3. **Create environment file**
+1. **Create environment file**
+
 ```bash
 # Create .env file
 echo "VITE_API_URL=http://localhost:5000/api" > .env
 ```
 
-4. **Start development server**
+1. **Start development server**
+
 ```bash
 npm run dev
 ```
@@ -61,7 +67,7 @@ The app will run on `http://localhost:3000`
 
 ## 📁 Project Structure
 
-```
+```bash
 src/
 ├── components/
 │   ├── auth/              # Login, Register
@@ -89,6 +95,7 @@ src/
 ## 🎯 Key Components
 
 ### Authentication Flow
+
 1. User visits `/login` or `/register`
 2. Credentials sent to backend API
 3. JWT token stored in localStorage
@@ -96,6 +103,7 @@ src/
 5. Protected routes check auth state
 
 ### Booking Flow
+
 1. User selects court, date, time
 2. Real-time availability check (court + coach + equipment)
 3. Dynamic price calculation with breakdown
@@ -104,13 +112,16 @@ src/
 6. Atomic booking creation via API
 
 ### Price Calculation
+
 The pricing component makes live API calls as user modifies:
+
 - Court selection
 - Date/time range
 - Coach selection
 - Equipment quantities
 
 Price breakdown shows:
+
 - Base price (court × duration)
 - Applied rules (peak hours, weekend, indoor premium)
 - Coach fee
@@ -120,6 +131,7 @@ Price breakdown shows:
 ## 🔐 Authentication
 
 Protected routes automatically redirect to login:
+
 - `/booking` - Requires authentication
 - `/my-bookings` - Requires authentication
 - `/admin` - Requires admin role
@@ -142,6 +154,7 @@ Custom color palette based on blue primary color with shades 50-950.
 ## 📱 Responsive Design
 
 Breakpoints:
+
 - `sm`: 640px (Mobile landscape)
 - `md`: 768px (Tablets)
 - `lg`: 1024px (Desktop)
@@ -178,18 +191,23 @@ Mobile-first approach with hamburger menu on small screens.
 ## 🔧 Configuration
 
 ### API URL
+
 Configure backend URL in `.env`:
+
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
 For production:
+
 ```env
 VITE_API_URL=https://your-api-domain.com/api
 ```
 
 ### Proxy Setup
+
 Vite proxy configured in `vite.config.js` for local development:
+
 ```javascript
 proxy: {
   '/api': 'http://localhost:5000'
@@ -211,6 +229,7 @@ Output in `dist/` directory.
 ## 🚀 Deployment
 
 ### Netlify
+
 ```bash
 # Build command
 npm run build
@@ -220,17 +239,20 @@ dist
 ```
 
 Add environment variable:
-```
+
+```javascript
 VITE_API_URL=https://your-backend-api.com/api
 ```
 
 ### Vercel
+
 ```bash
 # Auto-detected, just connect repository
 # Set environment variable in dashboard
 ```
 
 ### Manual Deployment
+
 ```bash
 npm run build
 # Upload dist/ folder to web server
@@ -238,22 +260,26 @@ npm run build
 
 ## 🐛 Common Issues
 
-**API Connection Failed**
+### API Connection Failed
+
 - Check if backend is running on port 5000
 - Verify VITE_API_URL in .env
 - Check browser console for CORS errors
 
-**Token Expired**
+### Token Expired
+
 - Tokens expire after 30 days
 - Re-login to get new token
 - Check localStorage in DevTools
 
-**Styles Not Loading**
+### Styles Not Loading
+
 - Run `npm install` again
 - Clear browser cache
 - Check if Tailwind is configured properly
 
-**Build Errors**
+### Build Errors
+
 - Delete node_modules and package-lock.json
 - Run `npm install` again
 - Check for TypeScript errors if any
@@ -261,7 +287,9 @@ npm run build
 ## 🎨 Customization
 
 ### Colors
+
 Edit `tailwind.config.js`:
+
 ```javascript
 colors: {
   primary: {
@@ -270,6 +298,7 @@ colors: {
   }
 }
 ```
+
 ## 🔮 Future Enhancements
 
 - [ ] Add loading skeletons

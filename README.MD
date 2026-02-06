@@ -5,6 +5,7 @@
 A full-stack court booking platform with multi-resource scheduling, dynamic pricing, and real-time availability checking.
 
 **Tech Stack:**
+
 - **Backend**: Node.js + Express + MySQL + Sequelize
 - **Frontend**: React + Vite + Tailwind CSS
 - **Authentication**: JWT
@@ -15,9 +16,10 @@ A full-stack court booking platform with multi-resource scheduling, dynamic pric
 ## 📋 Prerequisites
 
 Before you begin, ensure you have:
-- Node.js v16+ 
-- MySQL v8.0+ 
-- Git 
+
+- Node.js v16+
+- MySQL v8.0+
+- Git
 - Code editor (VS Code)
 - Postman (optional)
 
@@ -41,12 +43,14 @@ npm init -y
 ```
 
 **Install Backend Dependencies:**
+
 ```bash
 npm install express mysql2 sequelize dotenv bcryptjs jsonwebtoken cors
 npm install --save-dev nodemon
 ```
 
 **Create MySQL Database:**
+
 ```sql
 mysql -u root -p
 CREATE DATABASE sports_booking;
@@ -54,6 +58,7 @@ EXIT;
 ```
 
 **Create .env file in backend folder:**
+
 ```env
 PORT=
 DB_HOST=
@@ -65,6 +70,7 @@ NODE_ENV=
 ```
 
 **Start Backend:**
+
 ```bash
 # Seed database with test data
 npm run seed
@@ -85,6 +91,7 @@ npm create vite@latest . -- --template react
 ```
 
 **Install Frontend Dependencies:**
+
 ```bash
 npm install
 npm install react-router-dom axios date-fns
@@ -93,11 +100,13 @@ npx tailwindcss init -p
 ```
 
 **Create .env file in frontend folder:**
+
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
 **Start Frontend:**
+
 ```bash
 npm run dev
 ```
@@ -113,7 +122,8 @@ Frontend should now be running on `http://localhost:3000`
 Open Postman and test:
 
 **Health Check:**
-```
+
+```bash
 GET http://localhost:5000/health
 ```
 
@@ -121,32 +131,34 @@ GET http://localhost:5000/health
 
 Open browser to `http://localhost:3000`
 
-
 ## 📊 Seeded Data Reference
 
 After running `npm run seed`, you'll have:
 
-
 ## 🎯 Key Features to Demonstrate
 
 ### 1. Multi-Resource Booking
+
 - Select court + coach + equipment in single booking
 - All resources checked atomically
 - Booking fails if any resource unavailable
 
 ### 2. Dynamic Pricing
+
 - Base price changes by court type
 - Rules stack (indoor + peak + weekend)
 - Live calculation as options change
 - Detailed breakdown shown
 
 ### 3. Availability Checking
+
 - Real-time validation
 - Checks court, coach, equipment simultaneously
 - Shows specific conflicts
 - Prevents double booking
 
 ### 4. Admin Configuration
+
 - Create/edit courts
 - Manage equipment inventory
 - Configure coach availability
@@ -158,7 +170,8 @@ After running `npm run seed`, you'll have:
 
 ### Backend Issues
 
-**Database Connection Failed**
+#### Database Connection Failed
+
 ```bash
 # Check MySQL is running
 sudo service mysql status
@@ -168,7 +181,8 @@ sudo service mysql status
 mysql -u root -p sports_booking
 ```
 
-**Port Already in Use**
+#### Port Already in Use
+
 ```bash
 # Kill process on port 5000
 lsof -ti:5000 | xargs kill -9
@@ -176,7 +190,8 @@ lsof -ti:5000 | xargs kill -9
 # Or change PORT in .env
 ```
 
-**Seeding Fails**
+## Seeding Fails
+
 ```bash
 # Drop and recreate database
 mysql -u root -p
@@ -190,13 +205,15 @@ npm run seed
 
 ### Frontend Issues
 
-**API Calls Fail**
+#### API Calls Fail
+
 - Check backend is running on port 5000
 - Verify VITE_API_URL in .env
 - Check browser console for errors
 - Verify no CORS issues
 
-**Styles Not Showing**
+### Styles Not Showing
+
 ```bash
 # Reinstall Tailwind
 npm install -D tailwindcss postcss autoprefixer
@@ -206,7 +223,8 @@ npx tailwindcss init -p
 npm run dev
 ```
 
-**Token Expired**
+### Token Expired
+
 - Tokens last 30 days
 - Simply login again
 - Clear localStorage if needed
@@ -221,28 +239,32 @@ npm run dev
 2. Add MySQL addon (ClearDB or JawsDB)
 3. Set environment variables
 4. Deploy:
+
 ```bash
 git add .
 git commit -m "Deploy backend"
 git push heroku main
 ```
-5. Run seed command on Heroku
+
+1. Run seed command on Heroku
 
 ### Frontend (Netlify Example)
 
 1. Build production bundle:
+
 ```bash
 npm run build
 ```
-2. Deploy `dist/` folder to Netlify
-3. Set environment variable: `VITE_API_URL`
-4. Configure redirects for SPA
+
+1. Deploy `dist/` folder to Netlify
+2. Set environment variable: `VITE_API_URL`
+3. Configure redirects for SPA
 
 ---
 
 ## 📈 Project Structure Overview
 
-```
+```bash
 sports-booking-platform/
 ├── backend/
 │   ├── config/
@@ -273,7 +295,6 @@ sports-booking-platform/
     └── vite.config.js
 ```
 
-
 ## 🎓 Learning Outcomes
 
 1. **Full-Stack Development**: Backend API + Frontend integration
@@ -290,6 +311,7 @@ sports-booking-platform/
 ---
 
 **Next Steps:**
+
 - Add email notifications
 - Implement payment gateway
 - Add booking calendar view
